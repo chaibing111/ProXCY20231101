@@ -1,0 +1,101 @@
+﻿namespace sunyvpp
+{
+    partial class FrmProSave
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, true.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.txtFileName = new Sunny.UI.UITextBox();
+            this.btnConform = new Sunny.UI.UISymbolButton();
+            this.SuspendLayout();
+            // 
+            // uiSymbolButton1
+            // 
+            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton1.Location = new System.Drawing.Point(64, 129);
+            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton1.Name = "uiSymbolButton1";
+            this.uiSymbolButton1.Size = new System.Drawing.Size(109, 32);
+            this.uiSymbolButton1.Symbol = 61447;
+            this.uiSymbolButton1.TabIndex = 4;
+            this.uiSymbolButton1.Text = "重命名：";
+            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // txtFileName
+            // 
+            this.txtFileName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFileName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtFileName.Location = new System.Drawing.Point(309, 129);
+            this.txtFileName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFileName.MinimumSize = new System.Drawing.Size(1, 16);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.ShowText = true;
+            this.txtFileName.Size = new System.Drawing.Size(230, 32);
+            this.txtFileName.TabIndex = 3;
+            this.txtFileName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtFileName.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // btnConform
+            // 
+            this.btnConform.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConform.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnConform.Location = new System.Drawing.Point(570, 220);
+            this.btnConform.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnConform.Name = "btnConform";
+            this.btnConform.Size = new System.Drawing.Size(109, 32);
+            this.btnConform.Symbol = 61447;
+            this.btnConform.TabIndex = 4;
+            this.btnConform.Text = "确定";
+            this.btnConform.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnConform.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.btnConform.Click += new System.EventHandler(this.btnConform_Click);
+            // 
+            // FrmProSave
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(757, 338);
+            this.Controls.Add(this.btnConform);
+            this.Controls.Add(this.uiSymbolButton1);
+            this.Controls.Add(this.txtFileName);
+            this.Name = "FrmProSave";
+            this.Text = "项目另存为";
+            this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 800, 450);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmProSave_FormClosed);
+            this.Load += new System.EventHandler(this.FrmProSave_Load);
+            this.ResumeLayout(true);
+
+        }
+
+        #endregion
+
+        private Sunny.UI.UISymbolButton uiSymbolButton1;
+        private Sunny.UI.UITextBox txtFileName;
+        private Sunny.UI.UISymbolButton btnConform;
+    }
+}

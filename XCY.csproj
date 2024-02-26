@@ -1,0 +1,800 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BB5942C-2098-4852-B3F1-163181D4326E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>sunyvpp</RootNamespace>
+    <AssemblyName>sunyvpp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>XCY1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApeFree.DataStore">
+      <HintPath>dll\ApeFree.DataStore.dll</HintPath>
+    </Reference>
+    <Reference Include="ApeFree.DataStore.Registry">
+      <HintPath>dll\ApeFree.DataStore.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.FieldCalibrationApplication.Plugin, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.FieldCalibrationApplication.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ApplicationWizard.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ApplicationWizard.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.AutoSelect, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.AutoSelect.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Barcode, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Barcode.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Barcode.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Blob, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Blob.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Blob.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFix, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CalibFix.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFix.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CalibFix.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFixPlus, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CalibFixPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Caliper, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Caliper.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Caliper.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Caliper.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CNLSearch, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CNLSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CNLSearch.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CNLSearch.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ColorExtractor, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ColorExtractor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ColorExtractor.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ColorExtractor.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ColorMatch, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ColorMatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ColorMatch.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ColorMatch.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ColorSegmenter, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ColorSegmenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ColorSegmenter.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ColorSegmenter.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Comm, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Comm.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Comm.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Comm.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CompositeColorMatch, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CompositeColorMatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CompositeColorMatch.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CompositeColorMatch.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CorePlus, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.CorePlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Database, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Dimensioning, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Dimensioning.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Dimensioning.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Dimensioning.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Display.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Display.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.EdgeBlob, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.EdgeBlob.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG1394DCAM, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG1394DCAM.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG8100, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG8100.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG8100L, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG8100L.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG8120, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG8120.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG8500L, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG8500L.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG8501, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG8501.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG8504, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG8504.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FG8600, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FG8600.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.FGGigE, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.FGGigE.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ID, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ID.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ID.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ID.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImageFile, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ImageFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImageFile.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ImageFile.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImageProcessing, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ImageProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImageProcessing.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ImageProcessing.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImagingDevice, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ImagingDevice.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Inspection, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Inspection.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Inspection.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.Inspection.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.LinescanDistortionCorrection, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.LinescanDistortionCorrection.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.LinescanDistortionCorrection.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.LinescanDistortionCorrection.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.MultiLineFinder, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.MultiLineFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.MultiLineFinder.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.MultiLineFinder.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.OC, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.OC.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.OCRMax, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.OCRMax.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.OCRMax.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.OCRMax.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.OCVMax, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.OCVMax.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.OCVMax.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.OCVMax.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PadLocator, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PadLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PatInspect, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PatInspect.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PatInspect.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PatInspect.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PixelMap, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PixelMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PixelMap.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PixelMap.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PMAlign, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PMAlign.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PMAlign.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PMAlign.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PMRedLine, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PMRedLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PMRedLine.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PMRedLine.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PointMatcher, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.PointMatcher.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.QuickBuild.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.QuickBuild.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.QuickBuild.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.QuickBuild.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.QuickBuild.IO, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.QuickBuild.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ResultsAnalysis, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ResultsAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ResultsAnalysis.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ResultsAnalysis.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.SearchMax, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.SearchMax.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.SearchMax.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.SearchMax.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.StreetFinder, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.StreetFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ToolGroup, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ToolGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ToolGroup.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.ToolGroup.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.TwoDSymbol, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.TwoDSymbol.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.TwoDSymbol.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro.TwoDSymbol.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro3D, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro3D.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro3D.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro3D.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro3D.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro3D.Display.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro3D.Display.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Cognex.VisionPro3D.Graphic, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\vppdll\visionPro\Cognex.VisionPro3D.Graphic.dll</HintPath>
+    </Reference>
+    <Reference Include="DataUploadHelper">
+      <HintPath>dll\DataUploadHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EstunApiFroPublic-vc140-x64">
+      <HintPath>D:\EstunRemoteApiLib\x64\bin\EstunApiFroPublic-vc140-x64.dll</HintPath>
+    </Reference>
+    <Reference Include="EventMgrLib">
+      <HintPath>dll\EventMgrLib.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=18.11.0.1, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="hdevenginedotnet, Version=18.11.0.1, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\hdevenginedotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="HslCommunication">
+      <HintPath>dll\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="LUXSHARE">
+      <HintPath>dll\LUXSHARE.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>dll\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Spatial">
+      <HintPath>dll\MathNet.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCamCtrl.Net, Version=4.0.0.4, Culture=neutral, PublicKeyToken=52fddfb3f94be800, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\MvCamCtrl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net, Version=3.4.0.1, Culture=neutral, PublicKeyToken=52fddfb3f94be800, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MVS\Development\Bin\Anycpu\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MyCalibrationHelper">
+      <HintPath>dll\MyCalibrationHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="MyMelsecHelper">
+      <HintPath>dll\MyMelsecHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="STTech.CodePlus">
+      <HintPath>dll\STTech.CodePlus.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI">
+      <HintPath>..\..\..\vppdll\SunyUI\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common">
+      <HintPath>..\..\..\vppdll\SunyUI\SunnyUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TouchSocket">
+      <HintPath>dll\TouchSocket.dll</HintPath>
+    </Reference>
+    <Reference Include="VisionProHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\VisionProHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmLight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLight.Designer.cs">
+      <DependentUpon>FrmLight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskDownCamClib.cs" />
+    <Compile Include="Tool\Delay.cs" />
+    <Compile Include="Tool\Alarm.cs" />
+    <Compile Include="FrmHand\FrmCOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmCOM.Designer.cs">
+      <DependentUpon>FrmCOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmProCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmProCreate.Designer.cs">
+      <DependentUpon>FrmProCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmProOpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmProOpen.Designer.cs">
+      <DependentUpon>FrmProOpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmProSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmProSave.Designer.cs">
+      <DependentUpon>FrmProSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task1.cs" />
+    <Compile Include="Tool\MySerialPort.cs" />
+    <Compile Include="Tool\AutoSizeFormClass.cs" />
+    <Compile Include="BSL\Form_Weld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BSL\Form_Weld.designer.cs">
+      <DependentUpon>Form_Weld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmCalib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmCalib.Designer.cs">
+      <DependentUpon>FrmCalib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\ChangePSW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\ChangePSW.designer.cs">
+      <DependentUpon>ChangePSW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class\AIANMES.cs" />
+    <Compile Include="class\AIANworkOrder.cs" />
+    <Compile Include="class\FileHelper.cs" />
+    <Compile Include="class\PublicFunction.cs" />
+    <Compile Include="class\StationInfo.cs" />
+    <Compile Include="Tool\ConfigureFilePath.cs" />
+    <Compile Include="Tool\CsvServer.cs" />
+    <Compile Include="Tool\CsvUtil.cs" />
+    <Compile Include="FrmHand\FrmTCPClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmTCPClient.Designer.cs">
+      <DependentUpon>FrmTCPClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmTcpServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmTcpServer.designer.cs">
+      <DependentUpon>FrmTcpServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FormMelsecAscii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FormMelsecAscii.designer.cs">
+      <DependentUpon>FormMelsecAscii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FormMelsecBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FormMelsecBinary.designer.cs">
+      <DependentUpon>FormMelsecBinary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmBar.Designer.cs">
+      <DependentUpon>FrmBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmLogIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmLogIN.designer.cs">
+      <DependentUpon>FrmLogIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmCam.Designer.cs">
+      <DependentUpon>FrmCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmProjSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmProjSelect.Designer.cs">
+      <DependentUpon>FrmProjSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\FrmVisionParam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FrmVisionParam.Designer.cs">
+      <DependentUpon>FrmVisionParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\Frm_Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\Frm_Welcome.designer.cs">
+      <DependentUpon>Frm_Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="Tool\IAcqDeviceBase.cs" />
+    <Compile Include="Tool\JsonHelper.cs" />
+    <Compile Include="Tool\Loading.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\iniHelper.cs" />
+    <Compile Include="MarkAPI\MarkAPI.cs" />
+    <Compile Include="MarkAPI\MarkBase.cs" />
+    <Compile Include="MarkAPI\MyLaser.cs" />
+    <Compile Include="Config\mSettingOption.cs" />
+    <Compile Include="Tool\MVS.cs" />
+    <Compile Include="Tool\MyTcpHelper.cs" />
+    <Compile Include="Tool\MyTCPServer.cs" />
+    <Compile Include="FrmHand\FormOmron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\FormOmron.designer.cs">
+      <DependentUpon>FormOmron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHand\PLCTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\PLCTest.Designer.cs">
+      <DependentUpon>PLCTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\HDevelopExport.cs" />
+    <Compile Include="Config\SettingOption.cs" />
+    <Compile Include="FrmHand\ToolBlockEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\ToolBlockEdit.Designer.cs">
+      <DependentUpon>ToolBlockEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\UserInf.cs" />
+    <Compile Include="Tool\XMLMethod.cs" />
+    <Compile Include="FrmHand\XTipDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHand\XTipDlg.designer.cs">
+      <DependentUpon>XTipDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\VisionDataParam.cs" />
+    <Compile Include="VisionCalc.cs" />
+    <EmbeddedResource Include="BSL\Form_Weld.resx">
+      <DependentUpon>Form_Weld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmCalib.resx">
+      <DependentUpon>FrmCalib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmCOM.resx">
+      <DependentUpon>FrmCOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\ChangePSW.resx">
+      <DependentUpon>ChangePSW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmTCPClient.resx">
+      <DependentUpon>FrmTCPClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmTcpServer.resx">
+      <DependentUpon>FrmTcpServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmProCreate.resx">
+      <DependentUpon>FrmProCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmProOpen.resx">
+      <DependentUpon>FrmProOpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmProSave.resx">
+      <DependentUpon>FrmProSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FormMelsecAscii.resx">
+      <DependentUpon>FormMelsecAscii.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FormMelsecBinary.resx">
+      <DependentUpon>FormMelsecBinary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmBar.resx">
+      <DependentUpon>FrmBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmLogIN.resx">
+      <DependentUpon>FrmLogIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmCam.resx">
+      <DependentUpon>FrmCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmProjSelect.resx">
+      <DependentUpon>FrmProjSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FrmVisionParam.resx">
+      <DependentUpon>FrmVisionParam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\Frm_Welcome.resx">
+      <DependentUpon>Frm_Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLight.resx">
+      <DependentUpon>FrmLight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\FormOmron.resx">
+      <DependentUpon>FormOmron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\PLCTest.resx">
+      <DependentUpon>PLCTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FrmHand\ToolBlockEdit.resx">
+      <DependentUpon>ToolBlockEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHand\XTipDlg.resx">
+      <DependentUpon>XTipDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="XCY1.ico" />
+    <None Include="Resources\xcy.ico" />
+    <None Include="公司LOGO.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
